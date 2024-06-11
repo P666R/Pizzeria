@@ -1,11 +1,20 @@
-function App() {
-  const x = 23;
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Home from './ui/Home.jsx';
+import Menu from './features/menu/Menu.jsx';
 
-  return (
-    <div>
-      <h1>Hello Vite!</h1>
-    </div>
-  );
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home />,
+  },
+  {
+    path: '/menu',
+    element: <Menu />,
+  },
+]);
+
+function App() {
+  return <RouterProvider router={router} />;
 }
 
 export default App;
